@@ -5,13 +5,11 @@ body {
 }
 .searchDiv {
   text-align: center;
-  margin-top: 50px;
   width: 100%;
-  height: 30%;
+  height: 20%;
   background-image: url(images/frontcover.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
-  
 }
 .searchText {
   text-align: center;
@@ -20,7 +18,6 @@ body {
   opacity: 85%;
 }
 .listDiv {
-  display: block;
   text-align: center;
 }
 .listLI {
@@ -31,7 +28,6 @@ body {
   vertical-align: top;
   width: 250px;
   height: 300px;
-
 }
 .listLI [src="undefined"] {
   display: none;
@@ -40,9 +36,9 @@ body {
   width: 100%;
   max-width: 100%;
 }
-.previewDetails{
+.previewDetails {
   margin: 10px;
 }
-.previewTitle{
+.previewTitle {
   padding-bottom: 5px;
 }
