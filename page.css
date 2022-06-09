@@ -12,19 +12,22 @@
 }
 .recipeDetailsText {
   background-color: rgb(240, 240, 240);
-  flex: 2;
+  flex: 1;
 }
 .recipeImageLI {
-}
-.recipeImage {
-  width: 100%;
+  flex: 1;
+  background-color: rgb(240, 240, 240);
+  padding: 30px;
+  line-break: normal;
 }
 
 .ingredientsDiv {
   flex: 1;
+  text-align: left;
 }
 .nutrientsDiv {
-  flex: 2;
+  flex: 1;
+  vertical-align: top;
 }
 .nutrientsUL {
   width: 100%;
@@ -32,8 +35,15 @@
 }
 .nutrientLI {
   display: inline-block;
-  padding: 2px;
+  font-size: 14px;
+  text-align: center;
 }
 .both {
   display: flex;
+}
+.nutrientName {
+  margin: 0;
+}
+.ingredientsTitle {
+  text-align: center;
 }

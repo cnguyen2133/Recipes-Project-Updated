@@ -14,7 +14,7 @@ let recipeDetailsUL = document.getElementById("recipeDetailsUL")
 let nutrientsUL = document.getElementById("nutrientsUL")
 
 fetch(
-  "https://api.spoonacular.com/recipes/random?number=50&instructionsRequired=true&apiKey=0404acd02b6745479df9c27706db69ea"
+  "https://api.spoonacular.com/recipes/random?number=50&instructionsRequired=true&apiKey=c4080d70d3b44d10b7ae5ad3c75eac80"
 )
   .then(function (response) {
     return response.json()
@@ -27,7 +27,7 @@ searchText.addEventListener("keypress", function (event) {
   let search = searchText.value
   if (event.key === "Enter") {
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=40&addRecipeInformation=true&instructionsRequired=true&apiKey=0404acd02b6745479df9c27706db69ea
+      `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=40&addRecipeInformation=true&instructionsRequired=true&apiKey=c4080d70d3b44d10b7ae5ad3c75eac80
     `
     )
       .then(function (response) {
@@ -45,14 +45,17 @@ searchText.addEventListener("keypress", function (event) {
       </li>`
         })
 
-        listUL.innerHTML = recipesList.join("")
+        listUL.innerHTML = ""
+        stepsUL.innerHTML = ""
+        ingredientsUL.innerHTML = ""
+        nutrientsUL.innerHTML = ""
       })
   }
 })
 
 function displayDetails(id) {
   fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&instructionsRequired=true&apiKey=0404acd02b6745479df9c27706db69ea
+    `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&instructionsRequired=true&apiKey=c4080d70d3b44d10b7ae5ad3c75eac80
     `
   )
     .then(function (response) {
@@ -74,8 +77,8 @@ function displayDetails(id) {
         list
       ) {
         return `<li class ="stepsLI">
-      <p>${list.number}</p>
-      <p>${list.step}</p>
+      <p>${list.number}) ${list.step}</p>
+      
       </li>`
       })
       let recipeIngredients = total.extendedIngredients.map(function (
@@ -87,7 +90,7 @@ function displayDetails(id) {
       })
       let recipeNutrients = total.nutrition.nutrients.map(function (nutrient) {
         return `<li class ="nutrientLI">
-          <p> ${nutrient.name}</p>
+          <p class ="nutrientName"> ${nutrient.name}</p>
         <p class ="nutrientText"> ${nutrient.amount} ${nutrient.unit}</p>
         </li>
         `
